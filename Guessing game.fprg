@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Guessing game"/>
+        <attribute name="authors" value="ander"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-26 02:47:11 PM"/>
+        <attribute name="created" value="YW5kZXI7REVTS1RPUC1HR0dRSTg3OzIwMjQtMDktMjY7MDI6MzM6NDkgUE07Mjg3Mw=="/>
+        <attribute name="edited" value="YW5kZXI7REVTS1RPUC1HR0dRSTg3OzIwMjQtMDktMjY7MDI6NDc6MTEgUE07MTsyOTc1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="SecretNumber" type="Integer" array="False" size=""/>
+            <declare name="UserGuess" type="Integer" array="False" size=""/>
+            <assign variable="SecretNumber" expression="Random(10)"/>
+            <output expression="&quot;Enter your guess between 0 and 9&quot;" newline="True"/>
+            <input variable="UserGuess"/>
+            <while expression="UserGuess &lt;&gt; SecretNumber">
+                <if expression="UserGuess &lt; SecretNumber">
+                    <then>
+                        <output expression="&quot;Guess to low&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="UserGuess &gt; SecretNumber">
+                            <then>
+                                <output expression="&quot;Guess to High&quot;" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;Enter your guess between 0 and 9&quot;" newline="True"/>
+                <input variable="UserGuess"/>
+            </while>
+            <output expression="&quot;You are right. Thanks for playing&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
